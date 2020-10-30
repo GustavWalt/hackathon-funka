@@ -78,6 +78,7 @@ function send() {
   userFontSize();
   screenShot();
   getUrl();
+  $('.green-box').removeClass("d-none");
   fetch('http://localhost:3000/feedback', {
     method: 'post',
     headers: {
