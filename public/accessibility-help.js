@@ -15,7 +15,7 @@ function userInfo() {
     osVersion: result.os.version,
     osVersionName: result.os.versionName,
     platformType: result.platform.type,
-    message: 'No input from user'
+    message: 'No input from user.'
   });
 }
 
