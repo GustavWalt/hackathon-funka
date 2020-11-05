@@ -14,7 +14,8 @@ function userInfo() {
     osName: result.os.name,
     osVersion: result.os.version,
     osVersionName: result.os.versionName,
-    platformType: result.platform.type
+    platformType: result.platform.type,
+    message: 'No input from user'
   });
 }
 
@@ -43,7 +44,7 @@ function userFontSize() {
 //Function to save a screenshot.
 function screenShot() {
   var canvasScreenshot = html2canvas(document.querySelector("body"));
-
+  console.log(canvasScreenshot);
   //Assign the canvas to the object.
   Object.assign(allInfo, { screenshot: canvasScreenshot });
 }
@@ -54,6 +55,18 @@ function getUrl() {
 
   //Assign the font size to the object.
   Object.assign(allInfo, { url: URL });
+}
+
+//Function to get the user input
+function userInput() {
+  var userInput = document.querySelector(".user-input").value;
+
+  //Assign the user input to the object
+  if (userInput.length > 5) {
+    Object.assign(allInfo, { message: userInput });
+  } else {
+    Object.assign(allInfo, { message: 'No message included.' })
+  }
 }
 
 // Function to create the cookie 
@@ -78,6 +91,7 @@ function send() {
   userFontSize();
   screenShot();
   getUrl();
+  userInput();
   $('.green-box').removeClass("d-none");
   fetch('http://localhost:3000/feedback', {
     method: 'post',
@@ -90,4 +104,8 @@ function send() {
   }).then(function (data) {
     console.log(data.message);
   });
+}
+
+function close() {
+  $('.green-box').addClass("d-none");
 }

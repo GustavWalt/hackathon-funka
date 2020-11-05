@@ -12,7 +12,7 @@
   },
   "author": "Gustav Walter",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/GustavWalt/hackathon-funka#readme",
+  "homepage": "https://github.com/GustavWalt/hackathon-funka",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",

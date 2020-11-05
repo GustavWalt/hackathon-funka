@@ -28,6 +28,10 @@
                <p>
                   Read about our data collection <a href="#">here</a>
                </p>
+               <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Example textarea</label>
+                  <textarea class="form-control user-input" id="exampleFormControlTextarea1" rows="3"></textarea>
+               </div>
                <div class="green-box alert d-none alert-success">
                   <p>
                      <strong>Thank you!</strong> Thank you for providing information that will help us create a better
@@ -37,7 +41,8 @@
             </div>
             <div class="modal-footer">
                <button onclick="send()" type="button" class="btn btn-primary">Send </button>
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               <button onclick="close()" type="button" class="btn btn-secondary close-btn"
+                  data-dismiss="modal">Close</button>
             </div>
          </div>
       </div>
