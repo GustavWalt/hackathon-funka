@@ -1,12 +1,12 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 uuidv4();
 const fileName = `${uuidv4()}.json`;
-const { json } = require('body-parser')
-const app = express()
-const port = 3000
+const { json } = require('body-parser');
+const app = express();
+const port = 3000;
 
 app.use(bodyParser.json())
 app.use(express.static('public'))

@@ -1,0 +1,14 @@
+{
+  "userInfo": {
+    "browserName": "Chrome",
+    "browserVersion": "86.0.4240.111",
+    "osName": "Windows",
+    "osVersion": "NT 10.0",
+    "osVersionName": "10",
+    "platformType": "desktop",
+    "message": "Hejsan, test",
+    "fontSize": 17.600000381469727,
+    "screenshot": {},
+    "url": "http://localhost:3000/"
+  }
+}

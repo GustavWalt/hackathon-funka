@@ -19,9 +19,6 @@ function userInfo() {
   });
 }
 
-//Make the function appliable every time you change zoom.
-window.onresize = userFontSize;
-
 //Function to get the users font size.
 function userFontSize() {
 
@@ -40,6 +37,9 @@ function userFontSize() {
   //Assign the font size to the object.
   Object.assign(allInfo, { fontSize: calcFontSize });
 }
+
+//Make the function appliable every time you change zoom.
+window.onresize = userFontSize;
 
 //Function to save a screenshot.
 function screenShot() {
@@ -69,23 +69,6 @@ function userInput() {
   }
 }
 
-// Function to create the cookie 
-function createCookie(name, value, days) {
-  var expires;
-
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toGMTString();
-  }
-  else {
-    expires = "";
-  }
-
-  document.cookie = escape(name) + "=" +
-    escape(value) + expires + "; path=/";
-}
-
 function send() {
   userInfo();
   userFontSize();
@@ -104,8 +87,4 @@ function send() {
   }).then(function (data) {
     console.log(data.message);
   });
-}
-
-function close() {
-  $('.green-box').addClass("d-none");
 }

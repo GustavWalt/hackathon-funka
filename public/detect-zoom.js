@@ -1,13 +1,3 @@
-/* Detect-zoom
- * -----------
- * Cross Browser Zoom and Pixel Ratio Detector
- * Version 1.0.0 | Feb 5 2013
- * dual-licensed under the WTFPL and MIT license
- * Maintained by https://github/tombigel
- * Original developer https://github.com/yonran
- */
-
-//AMD and CommonJS initialization copied from https://github.com/zohararad/audio5js
 (function (root, ns, factory) {
     "use strict";
 
