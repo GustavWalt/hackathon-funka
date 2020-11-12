@@ -43,10 +43,13 @@ window.onresize = userFontSize;
 
 //Function to save a screenshot.
 function screenShot() {
-  var canvasScreenshot = html2canvas(document.querySelector("body"));
-  console.log(canvasScreenshot);
-  //Assign the canvas to the object.
-  Object.assign(allInfo, { screenshot: canvasScreenshot });
+  var canvasImg;
+  var dataURL;
+  html2canvas(document.querySelector("body")).then(canvas => {
+    canvasImg = canvas;
+    dataURL = canvasImg.toDataURL();
+    Object.assign(allInfo, { screenshotBase64: dataURL });
+  });
 }
 
 //Function to get the URL.
@@ -75,6 +78,7 @@ function send() {
   screenShot();
   getUrl();
   userInput();
+  console.log(allInfo);
   $('.green-box').removeClass("d-none");
   fetch('http://localhost:3000/feedback', {
     method: 'post',
